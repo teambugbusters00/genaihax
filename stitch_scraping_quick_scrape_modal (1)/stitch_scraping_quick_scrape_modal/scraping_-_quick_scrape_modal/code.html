@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI-Powered Marketplace - Scrape Product</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms"></script>
+<script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "primary": "#13a4ec",
+            "background-light": "#f6f7f8",
+            "background-dark": "#101c22",
+          },
+          fontFamily: {
+            "display": ["Space Grotesk"]
+          },
+          borderRadius: {
+            "DEFAULT": "0.25rem",
+            "lg": "0.5rem",
+            "xl": "0.75rem",
+            "full": "9999px"
+          },
+        },
+      },
+    }
+  </script>
+<style>
+    .form-select {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%239ca3af' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+      background-position: right 0.5rem center;
+      background-repeat: no-repeat;
+      background-size: 1.5em 1.5em;
+      padding-right: 2.5rem;
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="fixed inset-0 bg-black/50 flex justify-center items-end">
+<div class="w-full max-w-lg bg-background-light dark:bg-background-dark rounded-t-xl shadow-2xl flex flex-col">
+<div class="p-4 text-center">
+<div class="mx-auto w-12 h-1.5 bg-gray-300 dark:bg-gray-600 rounded-full"></div>
+</div>
+<div class="px-6 pb-6 pt-2 flex-grow overflow-y-auto">
+<h1 class="text-2xl font-bold text-gray-900 dark:text-white mb-4">Scrape Product Information</h1>
+<div class="space-y-4">
+<div>
+<label class="sr-only" for="url">Enter URL</label>
+<div class="relative">
+<span class="material-symbols-outlined absolute left-3 top-1/2 -translate-y-1/2 text-gray-400">link</span>
+<input class="w-full pl-10 pr-4 py-3 bg-white/10 dark:bg-black/20 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary text-gray-900 dark:text-white placeholder-gray-400 dark:placeholder-gray-500" id="url" placeholder="Enter URL" type="url"/>
+</div>
+</div>
+<div class="flex items-center text-gray-400 dark:text-gray-500">
+<hr class="flex-grow border-t border-gray-300 dark:border-gray-700"/>
+<span class="px-2 text-sm">OR</span>
+<hr class="flex-grow border-t border-gray-300 dark:border-gray-700"/>
+</div>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex items-center justify-center gap-2 w-full py-3 bg-white/10 dark:bg-black/20 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">code</span>
+<span>Paste HTML</span>
+</button>
+<button class="flex items-center justify-center gap-2 w-full py-3 bg-white/10 dark:bg-black/20 border border-gray-300 dark:border-gray-700 rounded-lg text-gray-700 dark:text-gray-300 hover:bg-gray-200 dark:hover:bg-gray-800 transition-colors">
+<span class="material-symbols-outlined">add_a_photo</span>
+<span>Upload Screenshot</span>
+</button>
+</div>
+<div>
+<label class="text-sm font-medium text-gray-700 dark:text-gray-300 block mb-1" for="marketplace">Target Marketplace</label>
+<select class="w-full py-3 px-4 bg-white/10 dark:bg-black/20 border border-gray-300 dark:border-gray-700 rounded-lg focus:ring-primary focus:border-primary text-gray-900 dark:text-white form-select appearance-none" id="marketplace">
+<option>Etsy</option>
+<option>Instagram</option>
+<option>WhatsApp</option>
+<option>Custom</option>
+</select>
+</div>
+<div class="flex items-center justify-between">
+<span class="text-gray-700 dark:text-gray-300">Auto-create Product</span>
+<label class="relative inline-flex items-center cursor-pointer">
+<input class="sr-only peer" type="checkbox" value=""/>
+<div class="w-11 h-6 bg-gray-200 dark:bg-gray-700 rounded-full peer peer-focus:ring-2 peer-focus:ring-primary/50 peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-0.5 after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-primary"></div>
+</label>
+</div>
+<div class="text-center">
+<a class="text-sm text-primary hover:underline" href="#">Advanced options</a>
+</div>
+</div>
+</div>
+<div class="p-4 bg-background-light dark:bg-background-dark border-t border-gray-200 dark:border-gray-800">
+<a href="../scraping_-_detail_page/code.html" class="w-full bg-primary text-white font-bold py-3 px-4 rounded-lg hover:bg-primary/90 transition-colors block text-center">
+          Start Scrape
+        </a>
+</div>
+</div>
+</div>
+
+<!-- Navigation Menu -->
+<div id="nav-menu" class="fixed top-16 right-4 z-60 hidden">
+  <div class="bg-white dark:bg-background-dark rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4">
+    <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">Quick Links</h3>
+    <ul class="space-y-2">
+      <li><a href="../home_/_landing_page/code.html" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Home</a></li>
+      <li><a href="../pack_holder_(product_bundles_/_packages)/code.html" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Product Packs</a></li>
+      <li><a href="../product_upload_/_editor_page/code.html" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Upload Product</a></li>
+      <li><a href="../scraping_-_detail_page/code.html" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Scraping Detail</a></li>
+      <li><a href="#" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Quick Scrape</a></li>
+      <li><a href="../storytelling_assistant_page/code.html" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Storytelling Assistant</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Navigation Button -->
+<button id="nav-toggle" class="fixed top-4 right-4 z-60 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors">
+  <span class="material-symbols-outlined">menu</span>
+</button>
+
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.add('hidden');
+    }
+  });
+</script>
+
+</body></html>
