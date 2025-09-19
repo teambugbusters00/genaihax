@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Product Scraper</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#13a4ec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101c22",
+            },
+            fontFamily: {
+              display: ["Space Grotesk"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .form-input,
+      .form-textarea {
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        appearance: none;
+      }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-slate-800 dark:text-slate-200">
+<div class="flex min-h-screen flex-col">
+<header class="sticky top-0 z-10 flex items-center justify-between border-b border-slate-200/50 bg-background-light/80 px-4 py-3 backdrop-blur-sm dark:border-slate-800/50 dark:bg-background-dark/80">
+<a href="../home_/_landing_page/code.html" class="flex h-10 w-10 items-center justify-center rounded-full text-slate-600 transition-colors hover:bg-slate-200 dark:text-slate-400 dark:hover:bg-slate-800">
+<span class="material-symbols-outlined"> arrow_back </span>
+</a>
+<h1 class="font-display text-lg font-bold text-slate-900 dark:text-white">Product Scraper</h1>
+<div class="w-10"></div>
+</header>
+<main class="flex-grow">
+<section class="p-4">
+<h2 class="font-display mb-3 text-base font-semibold text-slate-900 dark:text-white">Original Source</h2>
+<div class="overflow-hidden rounded-lg border border-slate-200 dark:border-slate-800">
+<div class="aspect-[4/3] w-full bg-cover bg-center bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuAqWFf2DuL7fd2MU_m25yb2AzguszaZoOqen3doiEdPXqIrsgkoVA4u4m7qhYWLee2NOU5Xu8KHwYXWpQltdP2LAzt9T6AFt6RGLhl1-uexJ3UDXXZLOeBbGNUKB_kQiqxWkuw3y4yre_m3jJcHezCpRRjm5_quKcrpQf1TxlMFR-m2pC3e5bqCBMuAZT39voPo3s0GrI82QkqTetv_xaSfHkgNg3nkjbaDhT-mtlDhH12zQcxWRLXnUR3uDm-nMz5SvXbHU_TWBSY");'></div>
+</div>
+</section>
+<section class="space-y-6 px-4">
+<h2 class="font-display text-base font-semibold text-slate-900 dark:text-white">Extracted Fields</h2>
+<div>
+<div class="mb-2 flex items-center justify-between">
+<label class="font-medium text-slate-800 dark:text-slate-200" for="title">Title</label>
+<div class="flex items-center gap-2">
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Confidence: 95%</p>
+<button class="text-slate-500 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-primary">
+<span class="material-symbols-outlined text-base"> refresh </span>
+</button>
+</div>
+</div>
+<input class="form-input w-full rounded border-slate-300 bg-slate-100 p-3 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500" id="title" placeholder="e.g. Handcrafted Wooden Bowl" type="text"/>
+</div>
+<div>
+<div class="mb-2 flex items-center justify-between">
+<label class="font-medium text-slate-800 dark:text-slate-200" for="price">Price</label>
+<div class="flex items-center gap-2">
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Confidence: 98%</p>
+<button class="text-slate-500 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-primary">
+<span class="material-symbols-outlined text-base"> refresh </span>
+</button>
+</div>
+</div>
+<input class="form-input w-full rounded border-slate-300 bg-slate-100 p-3 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500" id="price" placeholder="e.g. 49.99" type="text"/>
+</div>
+<div>
+<div class="mb-2 flex items-center justify-between">
+<label class="font-medium text-slate-800 dark:text-slate-200" for="description">Description</label>
+<div class="flex items-center gap-2">
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Confidence: 92%</p>
+<button class="text-slate-500 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-primary">
+<span class="material-symbols-outlined text-base"> refresh </span>
+</button>
+</div>
+</div>
+<textarea class="form-textarea w-full resize-none rounded border-slate-300 bg-slate-100 p-3 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500" id="description" placeholder="Describe the item..." rows="5"></textarea>
+</div>
+<div>
+<div class="mb-2 flex items-center justify-between">
+<label class="font-medium text-slate-800 dark:text-slate-200">Images</label>
+<div class="flex items-center gap-2">
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Confidence: 97%</p>
+<button class="text-slate-500 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-primary">
+<span class="material-symbols-outlined text-base"> refresh </span>
+</button>
+</div>
+</div>
+<div class="grid grid-cols-3 gap-2 rounded-lg">
+<div class="aspect-square w-full rounded bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuC_GqxwzYE8QWHZMQTxci4HaWQGMidsHWc2RPCO1FFH1-MfYX63_p0GWl32qA-W18-Ffv8IEX4Ox04QA7fBDUAC4XOWfgJNKI_cLwHwO3wy7D5gT8vENfISdLqAUJWWjafykmnNcXtcVJWxOkd3abq8xBc70EIzaE8xId40LNZDSUNORiRLgIi9Km9GvscGNZg4RI7qo9gjK6IWex32L0yYcyOIlShDXNYoRtXOCQO2E2j4zj-Dkar4MH2q1RSW6ZFZYnVIMwOxAaQ");'></div>
+<div class="aspect-square w-full rounded bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBLMdc_WHmO46nOzpFKpoBuYAm5bcNTsvzij06wAl3m0xjUwg-JKg391fUC13t7OnYJOd3K6UWPiWSs5A4DXjSemDK9NcCWvwKNMZ66zA4b_tB_RMPAiBf1KeAd-RsYw-c9tfvvJMUN-Ntg1Y_fgYE_ZAUg6KU7Pzb3NGjDILq6yxaGmNx73U-1mJcrvamfi3PTsWyE_L8rxZf9iZYjJTM49jkVk3_vtTSBLw1Cs-9JDd5LkOmhQAAyq7Jae_KV1D_jm3g61YzGyeA");'></div>
+<div class="aspect-square w-full rounded bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuANs1U7HIAKdwlBytudWGMHEA2FtQtYyE65DVNpBZEV-pEDl2mHLDFOHRBUiYRCqLTVnT-XM5GlZ-8JYcVILi9-QC__CWkgWtpKYFztmbZNyPzzkkqdwmMQKD9DHepzow1Pl-icSuN1ZwI0ylMuW83TQjJYHxiQ9foiLBFNxF3xbfjmzTfz526v9bL5C5_hNh8SDUiJ6aoC1p-YM1752u35y0YIK_rvTM1SfrNk3LLBoFNETAfL3CGmPPXoxkHGk_G4UxTfXX7NpY8");'></div>
+</div>
+</div>
+<div>
+<div class="mb-2 flex items-center justify-between">
+<label class="font-medium text-slate-800 dark:text-slate-200" for="tags">Tags</label>
+<div class="flex items-center gap-2">
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Confidence: 90%</p>
+<button class="text-slate-500 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-primary">
+<span class="material-symbols-outlined text-base"> refresh </span>
+</button>
+</div>
+</div>
+<input class="form-input w-full rounded border-slate-300 bg-slate-100 p-3 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500" id="tags" placeholder="e.g. handmade, rustic, kitchen" type="text"/>
+</div>
+<div>
+<div class="mb-2 flex items-center justify-between">
+<label class="font-medium text-slate-800 dark:text-slate-200" for="seller">Seller Name</label>
+<div class="flex items-center gap-2">
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Confidence: 96%</p>
+<button class="text-slate-500 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-primary">
+<span class="material-symbols-outlined text-base"> refresh </span>
+</button>
+</div>
+</div>
+<input class="form-input w-full rounded border-slate-300 bg-slate-100 p-3 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500" id="seller" placeholder="e.g. Artisan Crafts Co." type="text"/>
+</div>
+<div>
+<div class="mb-2 flex items-center justify-between">
+<label class="font-medium text-slate-800 dark:text-slate-200" for="location">Location</label>
+<div class="flex items-center gap-2">
+<p class="text-xs font-medium text-slate-500 dark:text-slate-400">Confidence: 94%</p>
+<button class="text-slate-500 transition-colors hover:text-primary dark:text-slate-400 dark:hover:text-primary">
+<span class="material-symbols-outlined text-base"> refresh </span>
+</button>
+</div>
+</div>
+<input class="form-input w-full rounded border-slate-300 bg-slate-100 p-3 text-slate-900 placeholder:text-slate-400 focus:border-primary focus:ring-primary dark:border-slate-700 dark:bg-slate-800 dark:text-white dark:placeholder:text-slate-500" id="location" placeholder="e.g. Portland, Oregon" type="text"/>
+</div>
+</section>
+<section class="space-y-6 p-4">
+<div class="flex items-center gap-2">
+<span class="material-symbols-outlined text-xl text-primary"> auto_awesome </span>
+<h2 class="font-display text-base font-semibold text-slate-900 dark:text-white">AI Suggestions</h2>
+</div>
+<div class="rounded-lg border border-primary/20 bg-primary/5 p-4 dark:border-primary/30 dark:bg-primary/10">
+<h3 class="mb-2 font-medium text-slate-800 dark:text-slate-200">SEO Title Variants</h3>
+<ul class="list-disc space-y-1 pl-5 text-sm text-slate-600 dark:text-slate-300">
+<li>Unique Hand-Carved Wooden Serving Bowl</li>
+<li>Rustic Farmhouse Decor: Wooden Artisan Bowl</li>
+<li>Eco-Friendly Handcrafted Wooden Bowl for Kitchen</li>
+</ul>
+</div>
+<div class="rounded-lg border border-primary/20 bg-primary/5 p-4 dark:border-primary/30 dark:bg-primary/10">
+<h3 class="mb-2 font-medium text-slate-800 dark:text-slate-200">Suggested Price Range</h3>
+<p class="text-sm text-slate-600 dark:text-slate-300">Based on similar items, a price between <span class="font-bold text-slate-800 dark:text-slate-200">$45.00</span> and <span class="font-bold text-slate-800 dark:text-slate-200">$60.00</span> is competitive.</p>
+</div>
+<div class="rounded-lg border border-primary/20 bg-primary/5 p-4 dark:border-primary/30 dark:bg-primary/10">
+<h3 class="mb-2 font-medium text-slate-800 dark:text-slate-200">Hashtag Ideas</h3>
+<div class="flex flex-wrap gap-2">
+<span class="rounded bg-primary/20 px-2 py-1 text-sm font-medium text-primary dark:bg-primary/30 dark:text-primary">#handcrafted</span>
+<span class="rounded bg-primary/20 px-2 py-1 text-sm font-medium text-primary dark:bg-primary/30 dark:text-primary">#woodworking</span>
+<span class="rounded bg-primary/20 px-2 py-1 text-sm font-medium text-primary dark:bg-primary/30 dark:text-primary">#artisanmade</span>
+<span class="rounded bg-primary/20 px-2 py-1 text-sm font-medium text-primary dark:bg-primary/30 dark:text-primary">#kitchenware</span>
+</div>
+</div>
+</section>
+</main>
+<footer class="sticky bottom-0 border-t border-slate-200/50 bg-background-light/80 p-4 backdrop-blur-sm dark:border-slate-800/50 dark:bg-background-dark/80">
+<div class="grid grid-cols-2 gap-3">
+<button class="flex h-12 items-center justify-center rounded-lg bg-slate-200 text-sm font-bold text-slate-700 transition-colors hover:bg-slate-300 dark:bg-slate-800 dark:text-slate-200 dark:hover:bg-slate-700">Discard</button>
+<a href="../product_upload_/_editor_page/code.html" class="flex h-12 items-center justify-center rounded-lg bg-primary text-sm font-bold text-white transition-opacity hover:opacity-90">Save Product</a>
+</div>
+</footer>
+</div>
+
+<!-- Navigation Menu -->
+<div id="nav-menu" class="fixed top-16 right-4 z-50 hidden">
+  <div class="bg-white dark:bg-background-dark rounded-lg shadow-lg border border-gray-200 dark:border-gray-700 p-4">
+    <h3 class="text-sm font-semibold text-gray-900 dark:text-white mb-2">Quick Links</h3>
+    <ul class="space-y-2">
+      <li><a href="../home_/_landing_page/code.html" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Home</a></li>
+      <li><a href="../pack_holder_(product_bundles_/_packages)/code.html" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Product Packs</a></li>
+      <li><a href="../product_upload_/_editor_page/code.html" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Upload Product</a></li>
+      <li><a href="#" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Scraping Detail</a></li>
+      <li><a href="../scraping_-_quick_scrape_modal/code.html" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Quick Scrape</a></li>
+      <li><a href="../storytelling_assistant_page/code.html" class="block text-sm text-gray-700 dark:text-gray-300 hover:text-primary">Storytelling Assistant</a></li>
+    </ul>
+  </div>
+</div>
+
+<!-- Navigation Button -->
+<button id="nav-toggle" class="fixed top-4 right-4 z-50 bg-primary text-white p-3 rounded-full shadow-lg hover:bg-primary/90 transition-colors">
+  <span class="material-symbols-outlined">menu</span>
+</button>
+
+<script>
+  const navToggle = document.getElementById('nav-toggle');
+  const navMenu = document.getElementById('nav-menu');
+
+  navToggle.addEventListener('click', () => {
+    navMenu.classList.toggle('hidden');
+  });
+
+  // Close menu when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !navMenu.contains(e.target)) {
+      navMenu.classList.add('hidden');
+    }
+  });
+</script>
+
+</body></html>
