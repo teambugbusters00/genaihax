@@ -1,0 +1,28 @@
+plugins = []
+headers = []
+redirects = []
+
+[functions]
+
+[functions."*"]
+
+[build]
+publish = "c:\\Users\\vijayjoping\\vs code\\project gen ai hax\\react-app\\build"
+publishOrigin = "config"
+commandOrigin = "config"
+command = "npm run build"
+base = "c:\\Users\\vijayjoping\\vs code\\project gen ai hax\\react-app"
+
+[build.environment]
+
+[build.processing]
+
+[build.processing.css]
+
+[build.processing.html]
+
+[build.processing.images]
+
+[build.processing.js]
+
+[build.services]
